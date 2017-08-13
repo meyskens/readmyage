@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Scan</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding >
+  <ion-card *ngIf="books.length == 0">
+    <ion-card-content>
+      <ion-card-title>
+        Scan a barcode to get started
+      </ion-card-title>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card *ngFor="let book of books">
+    <img [src]="book.cover" class="bookcover"/>
+    <ion-card-content>
+      <ion-card-title>
+        {{book.title}} - {{book.author}}
+      </ion-card-title>
+      <p>
+        {{book.audience}}
+      </p>
+      <ion-note>
+        {{book.source}}
+      </ion-note>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <button ion-button full color="secondary" class="Scan-button" (click)="scan()">SCAN</button>
+  </ion-toolbar>
+</ion-footer>
