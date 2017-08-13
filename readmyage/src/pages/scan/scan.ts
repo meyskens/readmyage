@@ -35,6 +35,9 @@ export class ScanPage {
       this.isbn = barcodeData.text
       this.api.lookup(barcodeData.text).then(data => {
         this.books = (data as any).results
+        if (this.books.length === 0) {
+          alert("No books found")
+        }
         loader.dismiss()
       })
     }, (err) => {
