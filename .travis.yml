@@ -18,11 +18,11 @@ install:
 
 script:
   - cd readmyage
+  - ../setversion.py 0.0.1 $(date '+%d%m%Y%H%M%S') config.xml
   - npm install
   - ionic login $IONIC_EMAIL $IONIC_PASS
   - ionic cordova resources
   - ionic cordova prepare
-  - ../setversion.py 0.0.1 $(date '+%d%m%Y%H%M%S') config.xml
   - ionic build
   - fastlane setup
   - cordova build --release --developmentTeam=Q2465CX346 --provisioningProfile="508d8b26-013a-4ddd-95f8-4b2ba484bf45" ios
