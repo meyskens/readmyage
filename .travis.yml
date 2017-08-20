@@ -17,7 +17,7 @@ script:
   - cd readmyage
   - npm install
   - ionic login $IONIC_EMAIL $IONIC_PASS
-  - ionic cordova ioresources
+  - ionic cordova resources
   - ionic cordova prepare
   - ionic build
   - ionic cordova build ios --device --debug
