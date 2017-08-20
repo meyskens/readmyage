@@ -8,6 +8,7 @@ language: objective-c
 before_install:
   - ./fix-cert.sh
   - brew update
+  - brew install node
   - echo -e "machine github.com\n  login $CI_USER_TOKEN" >> ~/.netrc
 
 install: 
