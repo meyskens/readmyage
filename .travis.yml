@@ -1,0 +1,16 @@
+sudo: false
+os: osx
+language: objective-c
+
+before_install:
+  - brew update
+
+install: 
+  - npm install -g npm
+  - npm install -g cordova ionic
+  - brew cask install fastlane
+
+script:
+  - cd readmyage
+  - ionic state restore
+  - ionic build ios --device --debug
