@@ -16,5 +16,6 @@ install:
 script:
   - cd readmyage
   - npm install
+  - ionic resources
   - ionic cordova prepare
   - ionic build ios --device --debug
