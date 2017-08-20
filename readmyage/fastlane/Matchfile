@@ -1,0 +1,3 @@
+git_url "https://#{ENV['GITHUB_SUBMODULES_USER']}@github.com/meyskens/ios-certs"
+app_identifier "me.eyskens.readmyage"
+username "meyskens@me.com"

@@ -20,4 +20,4 @@ script:
   - ionic cordova resources
   - ionic cordova prepare
   - ionic build
-  - ionic cordova build ios --device --debug
+  - fastlane beta
