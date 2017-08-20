@@ -71,7 +71,10 @@
             "cordova-plugin-splashscreen": {},
             "cordova-plugin-statusbar": {},
             "cordova-plugin-whitelist": {},
-            "ionic-plugin-keyboard": {}
+            "ionic-plugin-keyboard": {},
+            "phonegap-plugin-barcodescanner": {
+                "CAMERA_USAGE_DESCRIPTION": "Scan barcodes"
+            }
         }
     }
 }
