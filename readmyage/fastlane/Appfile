@@ -1,5 +1,5 @@
 app_identifier "me.eyskens.readmyage" # The bundle identifier of your app
-apple_id "meyskens@me.com" # Your Apple email address
+apple_id "travis@eyskens.me" # Your Apple email address
 
 team_id "Q2465CX346" # Developer Portal Team ID
 
