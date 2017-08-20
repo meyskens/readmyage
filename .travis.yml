@@ -6,8 +6,8 @@ node_js:
 language: objective-c
 
 before_install:
-  - rvm install 2.4
-  - rvm use 2.4
+  - rvm install 2.4.1
+  - rvm use 2.4.1
   - ./fix-cert.sh
   - nvm install 8
   - nvm use 8
