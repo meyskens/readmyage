@@ -1,6 +1,8 @@
 sudo: false
 os: osx
-osx_imqge: xcode9
+osx_image: xcode9
+node_js:
+  - "lts/*"
 language: objective-c
 
 before_install:
