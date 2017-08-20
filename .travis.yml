@@ -1,5 +1,6 @@
 sudo: false
 os: osx
+osx_imqge: xcode9
 language: objective-c
 
 before_install:
