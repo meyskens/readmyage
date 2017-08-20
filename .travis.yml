@@ -25,5 +25,4 @@ script:
   - ionic cordova prepare
   - ionic build
   - fastlane setup
-  - cordova build --release --developmentTeam=Q2465CX346 --provisioningProfile="508d8b26-013a-4ddd-95f8-4b2ba484bf45" ios
   - fastlane beta
