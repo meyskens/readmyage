@@ -24,6 +24,21 @@ platform :ios do
   desc "Submit a new Beta Build to Apple TestFlight"
   desc "This will also make sure the profile is up to date"
   lane :beta do
+    update_project_codesigning(
+      path: "platforms/ios/ReadMyAge.xcodeproj",
+      use_automatic_signing: false,
+      team_id: "Q2465CX346"
+    )
+    xcproj = Xcodeproj::Project.open("../platforms/ios/ReadMyAge.xcodeproj")
+
+    xcproj.build_configurations.each do |item|
+        # since we can't open xcode in CI environment, we configure provisioning here
+        # https://github.com/fastlane/fastlane/issues/6317#issuecomment-256178101
+        item.build_settings['DEVELOPMENT_TEAM'] = "Q2465CX346"
+        item.build_settings['CODE_SIGN_IDENTITY[sdk=iphoneos*]'] = "iPhone Distribution"
+        item.build_settings['PROVISIONING_PROFILE_SPECIFIER'] = "508d8b26-013a-4ddd-95f8-4b2ba484bf45" # or UUID
+    end
+
     gym(
         workspace: "platforms/ios/ReadMyAge.xcworkspace", 
         scheme: "ReadMyAge",

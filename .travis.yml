@@ -19,6 +19,7 @@ install:
   - sudo gem install fastlane
 
 script:
+  - export FL_PROJECT_SIGNING_FORCE_UPGRADE=true
   - cd readmyage
   - ../setversion.py 0.0.1 $TRAVIS_BUILD_NUMBER config.xml
   - npm install
@@ -26,5 +27,6 @@ script:
   - ionic cordova resources
   - ionic cordova prepare
   - ionic build
+  - fastlane add_plugin update_project_codesigning
   - fastlane setup
   - fastlane beta
