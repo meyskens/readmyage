@@ -16,10 +16,13 @@ platform :ios do
     scan
   end
 
+  lane :setup do
+    match(type: "appstore", readonly: true) # more information: https://codesigning.guide
+  end
+
   desc "Submit a new Beta Build to Apple TestFlight"
   desc "This will also make sure the profile is up to date"
   lane :beta do
-    match(type: "appstore", readonly: true) # more information: https://codesigning.guide
     gym(workspace: "platforms/ios/ReadMyAge.xcworkspace", scheme: "ReadMyAge") # Build your app - more options available
     pilot
 

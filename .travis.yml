@@ -21,5 +21,6 @@ script:
   - ionic cordova resources
   - ionic cordova prepare
   - ionic build
-  - cordova build --developmentTeam=Q2465CX346 ios
+  - fastlane setup
+  - cordova build --device --release --developmentTeam=Q2465CX346 --codeSignIdentity="iPhone Developer" ios
   - fastlane beta
