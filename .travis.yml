@@ -1,4 +1,4 @@
-sudo: false
+sudo: true
 os: osx
 osx_image: xcode8.3
 node_js:
@@ -11,7 +11,7 @@ before_install:
 install: 
   - npm install -g npm
   - npm install -g cordova ionic
-  - brew cask install fastlane
+  - sudo gem install fastlane
 
 script:
   - cd readmyage
