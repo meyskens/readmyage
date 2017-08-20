@@ -18,4 +18,5 @@ script:
   - npm install
   - ionic resources
   - ionic cordova prepare
-  - ionic build ios --device --debug
+  - ionic build
+  - ionic cordova build ios --device --debug
