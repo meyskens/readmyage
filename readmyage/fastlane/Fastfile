@@ -24,7 +24,14 @@ platform :ios do
   desc "Submit a new Beta Build to Apple TestFlight"
   desc "This will also make sure the profile is up to date"
   lane :beta do
-    #gym(workspace: "platforms/ios/ReadMyAge.xcworkspace", scheme: "ReadMyAge") # Build your app - more options available
+    gym(workspace: "platforms/ios/ReadMyAge.xcworkspace", 
+        scheme: "ReadMyAge",
+        export_method: "app-store",
+        export_options: {
+        provisioningProfiles: { 
+          "me.eyskens.readmyage": "508d8b26-013a-4ddd-95f8-4b2ba484bf45",
+        }
+    }) # Build your app - more options available
     pilot
 
     # sh "your_script.sh"
