@@ -3,5 +3,6 @@ apple_id "travis@eyskens.me" # Your Apple email address
 
 team_id "Q2465CX346" # Developer Portal Team ID
 
-# you can even provide different app identifiers, Apple IDs and team names per lane:
-# More information: https://github.com/fastlane/fastlane/blob/master/fastlane/docs/Appfile.md
+#android
+json_key_file "playstore-key/playstore.json"
+package_name "me.eyskens.readmyage"
