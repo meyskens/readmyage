@@ -73,12 +73,12 @@ platform :ios do
     # frameit
   end
 
-lane :beta-android do
-  supply(
-    lane: "beta",
-    apk: "platforms/android/build/outputs/apk/android-release.apk"
-  )
-end
+  lane :betaandroid do
+    supply(
+      lane: "beta",
+      apk: "platforms/android/build/outputs/apk/android-release.apk"
+    )
+  end
 
   # You can define as many lanes as you want
 
