@@ -1,5 +1,5 @@
 import { Component } from '@angular/core'
-import { NavController } from 'ionic-angular'
+import { NavController, AlertController } from 'ionic-angular'
 import { BarcodeScanner } from '@ionic-native/barcode-scanner'
 import { APIService } from '../../providers/api-service'
 import { LoadingController } from 'ionic-angular';
@@ -15,7 +15,7 @@ export class ScanPage {
   public books: any
   public isbn = ""
 
-  constructor(public navCtrl: NavController, private barcodeScanner: BarcodeScanner, private api:APIService, public loadingCtrl: LoadingController) {
+  constructor(public navCtrl: NavController, private barcodeScanner: BarcodeScanner, private api:APIService, public loadingCtrl: LoadingController, private alertCtrl: AlertController) {
     this.books = []
   }
 
@@ -35,10 +35,14 @@ export class ScanPage {
       this.isbn = barcodeData.text
       this.api.lookup(barcodeData.text).then(data => {
         this.books = (data as any).results
-        if (this.books.length === 0) {
-          alert("No books found")
-        }
         loader.dismiss()
+        if (this.books.length === 0) {
+          let alert = this.alertCtrl.create({
+            title: 'No books found',
+            buttons: ['OK']
+          });
+          alert.present();
+        }
       })
     }, (err) => {
       console.log(err)
