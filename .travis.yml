@@ -20,7 +20,6 @@ matrix:
 before_install:
   - rvm install 2.4.1
   - rvm use 2.4.1
-  - ./fix-cert.sh
   - nvm install 8
   - nvm use 8
   - echo -e "machine github.com\n  login $CI_USER_TOKEN" >> ~/.netrc
