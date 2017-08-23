@@ -24,6 +24,8 @@ matrix:
     - env: PLATFORM='ios'
       language: objective-c
       os: osx
+      before_script:
+        - sudo gem install fastlane
       
 before_install:
   - rvm install 2.4.1
