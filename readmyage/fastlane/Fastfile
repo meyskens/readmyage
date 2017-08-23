@@ -76,7 +76,10 @@ platform :ios do
   lane :betaandroid do
     supply(
       track: "beta",
-      apk: "platforms/android/build/outputs/apk/android-release.apk"
+      apk: "platforms/android/build/outputs/apk/android-release.apk",
+      skip_upload_metadata: true,
+      skip_upload_images: true,
+      skip_upload_screenshots: true,
     )
   end
 
