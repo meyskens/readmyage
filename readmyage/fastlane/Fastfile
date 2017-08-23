@@ -24,12 +24,15 @@ platform :ios do
   desc "Submit a new Beta Build to Apple TestFlight"
   desc "This will also make sure the profile is up to date"
   lane :beta do
+
+    #disable automatig signing (module is deprecated, alternative can't handle cordova project well)
     update_project_codesigning(
       path: "platforms/ios/ReadMyAge.xcodeproj",
       use_automatic_signing: false,
       team_id: "Q2465CX346"
     )
 
+    #set codesigning options for cordova generated project
     xcproj = Xcodeproj::Project.open("../platforms/ios/ReadMyAge.xcodeproj")
     xcproj.build_configurations.each do |item|
         # since we can't open xcode in CI environment, we configure provisioning here
@@ -49,8 +52,13 @@ platform :ios do
             "me.eyskens.readmyage": "508d8b26-013a-4ddd-95f8-4b2ba484bf45"
           }
         }
-    ) # Build your app - more options available
-    pilot
+    )
+
+    changelog_from_git_commits
+    pilot(
+      distribute: true,
+      distribute_external: true
+    )
 
     # sh "your_script.sh"
     # You can also use other beta testing services here (run `fastlane actions`)
