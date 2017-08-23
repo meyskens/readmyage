@@ -18,7 +18,6 @@ matrix:
 before_install:
   - rvm install 2.4.1
   - rvm use 2.4.1
-  - sudo rvm use 2.4.1
   - nvm install 8
   - nvm use 8
   - echo -e "machine github.com\n  login $CI_USER_TOKEN" >> ~/.netrc
@@ -26,7 +25,7 @@ before_install:
 install: 
   - npm install -g npm
   - npm install -g cordova ionic
-  - sudo gem install fastlane
+  - gem install fastlane
 
 script:
   - cd readmyage
