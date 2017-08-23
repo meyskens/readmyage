@@ -35,7 +35,7 @@ before_install:
 install: 
   - npm install -g npm
   - npm install -g cordova ionic
-  - gem install fastlane
+  - gem install fastlane --pre
 
 script:
   - cd readmyage
