@@ -26,6 +26,7 @@ script:
   - ionic login $IONIC_EMAIL $IONIC_PASS
   - ionic cordova resources
   - ionic cordova prepare
+  - /usr/libexec/PlistBuddy -c "Add :ITSAppUsesNonExemptEncryption bool false" ./platforms/ios/ReadMyAge/ReadMyAge-Info.plist
   - ionic build
   - fastlane add_plugin update_project_codesigning
   - fastlane setup
