@@ -41,7 +41,7 @@ export class ScanPage {
         loader.dismiss()
       })
     }, (err) => {
-      alert(err)
+      console.log(err)
     });
   }
 
