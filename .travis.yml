@@ -11,6 +11,16 @@ matrix:
     - env: PLATFORM='android'
       language: android
       os: linux
+      android:
+        components:
+        - tools
+        - platform-tools
+        - build-tools-19.1.0
+        - android-22
+        - extra-google-google_play_services
+        - extra-google-m2repository
+        - extra-android-m2repository
+        - addon-google_apis-google-19
     - env: PLATFORM='ios'
       language: objective-c
       os: osx
