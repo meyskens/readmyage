@@ -2,8 +2,20 @@ sudo: true
 os: osx
 osx_image: xcode8
 node_js:
-  - "lts/*"
+  - "8"
 language: objective-c
+
+matrix:
+  fast_finish: true
+  include:
+    - env: PLATFORM='android'
+      language: android
+      os: linux
+    - env: PLATFORM='ios'
+      language: objective-c
+      os: osx
+      
+
 
 before_install:
   - rvm install 2.4.1
@@ -26,4 +38,4 @@ script:
   - ionic cordova resources
   - ionic cordova prepare
   - ionic build
-  - ../scripts/release-ios.sh
+  - ../scripts/release-$PLATFORM.sh
