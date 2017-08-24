@@ -56,7 +56,6 @@ platform :ios do
 
     changelog_from_git_commits
     pilot(
-      distribute: true,
       distribute_external: true
     )
 
