@@ -39,6 +39,7 @@ export class ScanPage {
         if (this.books.length === 0) {
           let alert = this.alertCtrl.create({
             title: 'No books found',
+            subTitle: `Barcode: ${this.isbn}`,
             buttons: ['OK']
           });
           alert.present();
