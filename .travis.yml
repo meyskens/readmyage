@@ -21,6 +21,8 @@ matrix:
         - extra-google-m2repository
         - extra-android-m2repository
         - addon-google_apis-google-19
+      before_script:
+        - gem install fastlane --pre
     - env: PLATFORM='ios'
       language: objective-c
       os: osx
@@ -37,7 +39,6 @@ before_install:
 install: 
   - npm install -g npm
   - npm install -g cordova ionic
-  - gem install fastlane --pre
 
 script:
   - cd readmyage
