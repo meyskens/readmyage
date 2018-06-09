@@ -50,4 +50,4 @@ script:
   - ionic cordova resources || true
   - ionic cordova prepare || true
   - ionic build
-  - ../scripts/release-$PLATFORM.sh
+  - if [ "$TRAVIS_BRANCH" == "master" ] && [ "$TRAVIS_PULL_REQUEST" == "false" ]; then ../scripts/release-$PLATFORM.sh; fi
