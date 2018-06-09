@@ -5,4 +5,4 @@ sudo gem install bundler
 /usr/libexec/PlistBuddy -c "Add :ITSAppUsesNonExemptEncryption bool false" ./platforms/ios/ReadMyAge/ReadMyAge-Info.plist
 fastlane add_plugin update_project_codesigning
 fastlane setup
-travis_wait fastlane beta
+fastlane beta
