@@ -1,4 +1,5 @@
 #!/bin/bash
+if [ "$TRAVIS_BRANCH" != "master" ] || [ "$TRAVIS_PULL_REQUEST" == "true" ]; then exit 0; fi
 export FL_PROJECT_SIGNING_FORCE_UPGRADE=true
 sudo gem install bundler
 ../scripts/fix-cert.sh
