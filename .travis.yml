@@ -47,7 +47,7 @@ script:
   - npm install
   - ionic cordova platform add $PLATFORM
   - ionic login $IONIC_EMAIL $IONIC_PASS
-  - ionic cordova resources
-  - ionic cordova prepare
+  - ionic cordova resources || true
+  - ionic cordova prepare || true
   - ionic build
   - ../scripts/release-$PLATFORM.sh
