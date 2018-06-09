@@ -23,7 +23,7 @@ matrix:
         - addon-google_apis-google-19
       before_script:
         - gem install fastlane --pre
-        - apt install -y graphicsmagick
+        - sudo apt install -y graphicsmagick
     - env: PLATFORM='ios'
       language: objective-c
       os: osx
