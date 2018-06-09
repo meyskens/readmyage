@@ -55,4 +55,4 @@ script:
   - ionic cordova resources || true
   - ionic cordova prepare || true
   - ionic build
-  - travis_wait ../scripts/release-$PLATFORM.sh
+  - travis_wait 60 ../scripts/release-$PLATFORM.sh
