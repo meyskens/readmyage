@@ -26,6 +26,7 @@
         "@ionic-native/status-bar": "3.12.1",
         "@ionic/storage": "2.0.1",
         "cordova-android": "^7.1.0",
+        "cordova-android-support-gradle-release": "^1.4.3",
         "cordova-ios": "^4.5.4",
         "cordova-plugin-compat": "^1.1.0",
         "cordova-plugin-console": "^1.0.5",
@@ -76,6 +77,9 @@
             "ionic-plugin-keyboard": {},
             "phonegap-plugin-barcodescanner": {
                 "CAMERA_USAGE_DESCRIPTION": "Scan barcodes"
+            },
+            "cordova-android-support-gradle-release": {
+                "ANDROID_SUPPORT_VERSION": "27.+"
             }
         }
     }
