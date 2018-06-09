@@ -23,11 +23,13 @@ matrix:
         - addon-google_apis-google-19
       before_script:
         - gem install fastlane --pre
+        - apt install -y graphicsmagick
     - env: PLATFORM='ios'
       language: objective-c
       os: osx
       before_script:
         - sudo gem install fastlane
+        - brew install graphicsmagick
       
 before_install:
   - rvm install 2.4.1
@@ -37,7 +39,8 @@ before_install:
   - echo -e "machine github.com\n  login $CI_USER_TOKEN" >> ~/.netrc
   - yes | sdkmanager "platforms;android-26" || true
 
-install: 
+install:
+  - sudo npm install ionic-resources -g 
   - npm install -g npm
   - npm install -g cordova ionic
 
@@ -47,6 +50,7 @@ script:
   - npm install
   - ionic cordova platform add $PLATFORM
   - ionic login $IONIC_EMAIL $IONIC_PASS
+  - ionic-resources || true
   - ionic cordova resources || true
   - ionic cordova prepare || true
   - ionic build
