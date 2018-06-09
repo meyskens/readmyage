@@ -40,7 +40,7 @@ before_install:
   - yes | sdkmanager "platforms;android-26" || true
 
 install:
-  - sudo npm install ionic-resources -g 
+  - npm install ionic-resources -g 
   - npm install -g npm
   - npm install -g cordova ionic
 
