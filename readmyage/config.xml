@@ -12,6 +12,9 @@
     <allow-intent href="sms:*" />
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
+    <edit-config target="NSCameraUsageDescription" file="*-Info.plist" mode="merge">
+      <string>scan barcodes</string>
+    </edit-config>
     <preference name="webviewbounce" value="false" />
     <preference name="UIWebViewBounce" value="false" />
     <preference name="DisallowOverscroll" value="true" />
