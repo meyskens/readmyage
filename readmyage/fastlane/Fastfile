@@ -68,7 +68,8 @@ platform :ios do
       beta_app_description: "Scans barcodes to tell a book's age",
       beta_app_feedback_email: "maartje@eyskens.me",
       update_build_info_on_upload: true,
-      distribute_external: true
+      distribute_external: true,
+      groups: [ "heroku" ],
     )
 
     # sh "your_script.sh"
