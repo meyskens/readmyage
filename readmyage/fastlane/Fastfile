@@ -11,27 +11,26 @@ platform :ios do
     
   end
   
-  create_keychain(
-      name: ENV["MATCH_KEYCHAIN_NAME"],
-      password: ENV["MATCH_KEYCHAIN_PASSWORD"],
-      timeout: 3600
-  )
-
   desc "Runs all the tests"
   lane :test do
     scan
   end
 
   lane :setup do
+    create_keychain(
+      name: ENV["MATCH_KEYCHAIN_NAME"],
+      password: ENV["MATCH_KEYCHAIN_PASSWORD"],
+      timeout: 3600
+      )
     match(
       type: "development",
-      readonly: true
+      readonly: true,
       keychain_name: ENV["MATCH_KEYCHAIN_NAME"],
       keychain_password: ENV["MATCH_PASSWORD"],
      ) 
     match(
       type: "appstore",
-      readonly: true
+      readonly: true,
       keychain_name: ENV["MATCH_KEYCHAIN_NAME"],
       keychain_password: ENV["MATCH_PASSWORD"],
      ) # more information: https://codesigning.guide
