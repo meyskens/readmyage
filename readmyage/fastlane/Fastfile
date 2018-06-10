@@ -17,22 +17,14 @@ platform :ios do
   end
 
   lane :setup do
-    create_keychain(
-      name: ENV["MATCH_KEYCHAIN_NAME"],
-      password: ENV["MATCH_KEYCHAIN_PASSWORD"],
-      timeout: 3600
-      )
+    setup_travis
     match(
       type: "development",
       readonly: true,
-      keychain_name: ENV["MATCH_KEYCHAIN_NAME"],
-      keychain_password: ENV["MATCH_PASSWORD"],
      ) 
     match(
       type: "appstore",
       readonly: true,
-      keychain_name: ENV["MATCH_KEYCHAIN_NAME"],
-      keychain_password: ENV["MATCH_PASSWORD"],
      ) # more information: https://codesigning.guide
   end
 
