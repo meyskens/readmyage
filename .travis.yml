@@ -1,6 +1,6 @@
 sudo: true
 os: osx
-osx_image: xcode9.3
+osx_image: xcode9.2
 node_js:
   - "8"
 language: objective-c
@@ -55,4 +55,4 @@ script:
   - ionic cordova resources || true
   - ionic cordova prepare || true
   - ionic build
-  - travis_wait 60 ../scripts/release-$PLATFORM.sh
+  - ../scripts/release-$PLATFORM.sh
