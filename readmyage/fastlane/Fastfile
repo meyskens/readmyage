@@ -10,6 +10,12 @@ platform :ios do
     
     
   end
+  
+  create_keychain(
+      name: ENV["MATCH_KEYCHAIN_NAME"],
+      password: ENV["MATCH_KEYCHAIN_PASSWORD"],
+      timeout: 3600
+  )
 
   desc "Runs all the tests"
   lane :test do
